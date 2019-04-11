@@ -1,0 +1,1 @@
+gradlew cloudNativeDeveloperDistributedSystemDeployment -PregistrationServerUrl=https://registration-nepolian.cfapps.io -PbacklogServerUrl=https://backlog-nepolian.cfapps.io -PallocationsServerUrl=https://allocations-nepolian.cfapps.io -PtimesheetsServerUrl=https://timesheets-nepolian.cfapps.io
