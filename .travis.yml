@@ -23,6 +23,7 @@ jobs:
         - ./gradlew testMigrate
       script:
         - APPLICATION=allocations
+        - chmod a+x gradlew
         - ./gradlew clean :applications:${APPLICATION}-server:build
       before_deploy:
         - git config --local user.name "Travis CI"
@@ -43,6 +44,7 @@ jobs:
       install: skip
       before_script:
         - mysql -uroot < databases/create_databases.sql
+        - chmod a+x gradlew
         - ./gradlew testMigrate
       script:
         - APPLICATION=backlog
@@ -62,6 +64,7 @@ jobs:
       install: skip
       before_script:
         - mysql -uroot < databases/create_databases.sql
+        - chmod a+x gradlew
         - ./gradlew testMigrate
       script:
         - APPLICATION=registration
@@ -81,6 +84,7 @@ jobs:
       install: skip
       before_script:
         - mysql -uroot < databases/create_databases.sql
+        - chmod a+x gradlew
         - ./gradlew testMigrate
       script:
         - APPLICATION=timesheets
@@ -146,4 +150,5 @@ jobs:
         - sudo apt-get install cf-cli
       script:
         - cf login -a $CF_API_URL -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE
+        - chmod a+x gradlew
         - ./gradlew cfMigrate
