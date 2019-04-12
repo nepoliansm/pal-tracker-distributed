@@ -2,7 +2,7 @@ applications:
   - name: tracker-registration
     path: ./applications/registration-server/build/libs/registration-server.jar
     routes:
-      - route: registration-nepolian.cfapps.io
+      - route: registration-nepolian1.cfapps.io
     memory: 475M
     disk_quota: 475M
     instances: 1
@@ -12,3 +12,5 @@ applications:
     services:
       - tracker-registration-database
       - tracker-service-registry
+      - tracker-circuit-breaker-dashboard
+      - tracker-sso
