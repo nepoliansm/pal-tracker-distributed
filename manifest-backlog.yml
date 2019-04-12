@@ -10,8 +10,10 @@ applications:
       GRANT_TYPE: client_credentials
       JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }, memory_calculator: { stack_threads: 100} }'
       JAVA_OPTS: '-Xms64m -Xmx256m'
+      MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "*"
     services:
       - tracker-backlog-database
       - tracker-service-registry
       - tracker-circuit-breaker-dashboard
       - tracker-sso
+      - tracker-config-server
